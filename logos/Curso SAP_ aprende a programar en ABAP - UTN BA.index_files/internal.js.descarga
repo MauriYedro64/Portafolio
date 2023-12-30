@@ -1,0 +1,93 @@
+function toggleMiuChevron(event) {
+    const child = event.children[0];
+    const currentVal = child.innerHTML;
+    if (child.tagName === 'SPAN') {
+        if (currentVal === 'expand_less') {
+            child.innerHTML = 'expand_more';
+        } else {
+            child.innerHTML = 'expand_less';
+        }  
+    }
+};
+function handleFaqClick(element) {
+    var radiosButton = document.getElementsByName('rd');
+    var rdButtonById = document.getElementById(element.id.replace('-label', ''));
+    for (var rdButton of radiosButton) {
+        if(rdButton.id === rdButtonById.id && rdButtonById.value === "on") {
+            rdButtonById.checked = true;
+            rdButtonById.value = "off";
+        } else if (rdButton.value === "off") {
+            rdButton.checked = false;
+            rdButton.value = "on";
+        }
+    }
+}
+function handleSubmit(event, form) {
+    const element = document.getElement('div');
+    div.className = 'alert'
+    const popup = window.open('', 'formpopup', 'width=400,height=400,resizeable,scrollbars');
+
+    form.target = 'formpopup';
+    popup.focus();
+}
+
+function startCounting() {
+    const metrics = document.getElementsByClassName('metrics');
+    for (const metric of metrics) {
+        const docViewTop = $(window).scrollTop();
+        const docViewBottom = docViewTop + $(window).height();
+        const elemTop = $(metric).offset().top;
+        const elemBottom = elemTop + $(metric).height();
+        const itsWorking = $(metric).attr('data-working');
+        if (metric && elemBottom <= docViewBottom && elemTop >= docViewTop && !itsWorking) {
+            let start;
+            const final = parseInt(metric.innerText, 10);
+            const duration = 4000;
+            const step = ts => {
+              if (!start) {
+                start = ts
+              }
+              let progress = (ts - start) / duration;
+
+              if (progress <= final) {
+                 metric.textContent = Math.floor(progress * final);
+              }
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              }
+            }
+            $(metric).attr('data-working', 'true');
+            requestAnimationFrame(step);
+        }
+    }
+}
+
+window.onscroll = startCounting;
+window.onload = function() {
+    startCounting();
+    document.querySelectorAll('.material-icons').forEach(t => {
+        t.style.display = 'block';
+    });
+
+    setTimeout(() => {
+        const youtube = document.querySelectorAll('.youtube');
+        for (let i = 0; i < youtube.length; i++) {
+            const source = 'https://img.youtube.com/vi/'+youtube[i].dataset.embed+'/sddefault.jpg';
+            const image = new Image();
+            image.src = source;
+            image.className = 'img-fluid';
+            image.addEventListener('load', (function appendElement() {
+                youtube[i].appendChild(image);
+            }(i)));
+            youtube[i].addEventListener('click', function clickEventListener() {
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('autoplay', '');
+                iframe.setAttribute('src', 'https://www.youtube.com/embed/'+this.dataset.embed+'?rel=0&showinfo=0&autoplay=1');
+                this.innerHTML = '';
+                this.appendChild(iframe);
+            });
+        }
+    }, 200);
+}

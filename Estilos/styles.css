@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    width: 100%;
+    /*background-color: #353535;*/
+    background: linear-gradient(to bottom, #000000, #242424, #474747);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*adding: 2px;*/
+   
+    height: 100px; /* Ajusta la altura según tus preferencias */
+    /*padding: 0 20px; /* Ajusta el espaciado interno según tus preferencias */
+  }
+  
+
+  .logo img {
+    /*margin-top: -40px;*/
+    max-width: 200px;
+    margin-left: 60px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  nav li {
+    padding-right: 85px;
+  }
+  
+  nav a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Agrega una transición a background-color y transform */
+  }
+
+  nav ul li a:hover {
+    color: #d4513f;
+    transition: all 0.3s;
+    transition: color 0.3s;
+  }
+
+  
+  .contenido {
+    box-shadow: 0 4px 12px rgba(179, 179, 179, 0.993);
+
+    box-sizing: border-box;
+    margin-top: 70px; /* Ajusta el margen superior para dar espacio al header fijo */
+    padding: 40px;
+    border: 2px solid #e4e4e4; /* Añade un borde para que sea más visible */
+    border-radius: 10px; /* Ajusta el valor según la cantidad de redondeo que desees */
+    /* background-color: #e4e4e4; /* Agrega un fondo gris claro */
+    background: linear-gradient(to bottom, #ffffff, #ebebeb);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    margin: 60px;
+  }
+
+  .contenido p {
+    font-size: 22px;
+    margin-top: 18px; /* Agrega un espacio entre los títulos y el párrafo siguiente */
+  }
+  
+  .contenido li{
+    font-size: 18px;
+  }
+
+
+  .contenido img {
+
+    max-width: 250px;
+    margin-top: 40px; /* Agrega un espacio entre el párrafo y la imagen */
+  }
+
+/*INFORMACION PERSONAL*/
+.contenido h2{
+  font-size: 25px;
+  color: #585858;
+}
+
+/* Estilos para el botón de redes sociales */
+.redesBtn {
+  margin-top: 40px;
+  background-color: #4285f4; /* Color de fondo azul */
+  color: #fff; /* Color del texto blanco */
+  padding: 12px 22px; /* Ajusta el espacio interno según tus preferencias */
+  font-size: 15px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Ajusta el redondeo de las esquinas según tus preferencias */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Añade transiciones suaves al color de fondo y texto al hacer hover */
+  
+}
+
+.redesBtn:hover {
+  background-color: #185bc5;/* Cambia el color de fondo al hacer hover */
+  color: #fff; /* Cambia el color del texto al hacer hover */
+  
+}
+
+/* Boton para descargar CV */
+.cvBtn {
+  margin-left: 5px;
+  margin-top: 20px;
+  background-color: #4285f4; /* Color de fondo azul */
+  color: #fff; /* Color del texto blanco */
+  padding: 12px 22px; /* Ajusta el espacio interno según tus preferencias */
+  font-size: 15px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  border: none; /* Elimina el borde */
+  border-radius: 5px; /* Ajusta el redondeo de las esquinas según tus preferencias */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Añade transiciones suaves al color de fondo y texto al hacer hover */
+  
+}
+
+.cvBtn:hover {
+  background-color: #185bc5;/* Cambia el color de fondo al hacer hover */
+  color: #fff; /* Cambia el color del texto al hacer hover */
+}
+
+
+/*AVATAR*/
+  .avatar {
+    border-radius: 50%;
+    max-width: 200px;
+
+  }
+  
+  #redesDropdown {
+    display: none;
+  }
+  
+
+  /* SLIDER LOGOS */
+.logos-contenido{
+  width: 75vw;
+  margin: auto;
+}
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 30px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  /*.logos:hover .logos-slide {
+    animation-play-state: paused;
+  }*/
+.log1:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  .log2:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  .log3:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  .log4:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  .log5:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  .log6:hover {
+    transition: transform 0.3s ease; /* Agrega una transición suave al logo */
+  transform: scale(1.2); /* Escala el logo al doble de su tamaño original al pasar el ratón */
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 60s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 55px;
+    margin: 0 40px;
+  }
+
+
+  
+  /* FOOTER */
+  footer {
+    margin-top: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+   
+    
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+      background-color: #4285f4;
+      width: 99%;
+    padding: 7px;
+    
+  }
+
+  .icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .icons a:hover {
+    color: #ffcc00;
+  }
+

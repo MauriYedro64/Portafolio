@@ -1,0 +1,58 @@
+
+.tabla-servicios{
+    display: grid;
+    margin-right: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 200px;
+    margin-top: 40px;
+    /*box-shadow: 0 1px 6px rgba(179, 179, 179, 0.993);*/
+
+    border-collapse: separate;
+    border-spacing:  45px;
+   
+    background-color: rgb(255, 255, 255);
+
+    
+}
+
+.tabla-servicios h3{
+    margin-left: -40px;
+    font-size: 25px;
+}
+
+.tabla-servicios p{
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.tabla-servicios td{
+    padding-inline: 50px; /*Lo que hizo separar bien los textos*/
+    width: 550px;
+    height: 100px;
+    font-size: 20px;
+    border: 1px solid #ffffff; /* Añade un borde para que sea más visible */
+    vertical-align: top; /* Alinea el texto h3 en la parte superior del td */
+}
+
+
+/*.mas-info{
+    position: absolute;
+  color: #fff;
+  padding: 6px 12px; 
+  font-size: 15px; 
+  border: none; 
+  border-radius: 1px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.mas-info:hover {
+    background-color: #888888; 
+    color: #fff; 
+}*/
+
+.tabla-servicios img{
+    width: 35px; /* Tamaño de la imagen, ajusta según sea necesario */
+    margin-right: 12px; /* Espacio entre la imagen y el título */
+}
